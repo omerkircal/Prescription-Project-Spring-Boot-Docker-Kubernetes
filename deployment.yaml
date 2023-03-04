@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prescription
+spec:
+  selector:
+    matchLabels:
+      app: prescription
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: prescription
+    spec:
+      containers:
+        - name: quest-app
+          image: omerkircal/prescription:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8081
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 200m
+              memory: 1Gi
+            limits:
+              cpu: 1
+              memory: 1Gi

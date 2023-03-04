@@ -1,0 +1,903 @@
+{
+	"info": {
+		"_postman_id": "bcf18f52-3b8d-4f52-801b-0ec6ef7f0214",
+		"name": "PrescriptionProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20905857"
+	},
+	"item": [
+		{
+			"name": "RawMaterials",
+			"item": [
+				{
+					"name": "rawmaterials/save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"Test Description 1\",\r\n    \"prescription\":{\r\n        \"id\": 1,\r\n        \"name\": \"Test Name\",\r\n        \"serialNumber\": 12345678,\r\n        \"prescriptionType\": \"TYPE_1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rawmaterials/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rawmaterials",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rawmaterials/save",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\":\"Test Description 1\",\r\n    \"prescription\":{\r\n        \"id\": 1,\r\n        \"name\": \"Test Name\",\r\n        \"serialNumber\": 12345678,\r\n        \"prescriptionType\": \"TYPE_1\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/rawmaterials/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"rawmaterials",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:47:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"description\": \"Test Description 1\",\n    \"prescription\": {\n        \"id\": 1,\n        \"name\": \"Test Name\",\n        \"serialNumber\": 12345678,\n        \"prescriptionType\": \"TYPE_1\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "rawmaterials/getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/rawmaterials/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rawmaterials",
+								"getAll"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rawmaterials/getAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/rawmaterials/getAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"rawmaterials",
+										"getAll"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:48:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Test Description 1\",\n        \"prescription\": {\n            \"id\": 1,\n            \"name\": \"Test Name\",\n            \"serialNumber\": 12345678,\n            \"prescriptionType\": \"TYPE_1\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"description\": \"Test Description 2\",\n        \"prescription\": {\n            \"id\": 1,\n            \"name\": \"Test Name\",\n            \"serialNumber\": 12345678,\n            \"prescriptionType\": \"TYPE_1\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"description\": \"Test Description 3\",\n        \"prescription\": {\n            \"id\": 2,\n            \"name\": \"Test Name-2\",\n            \"serialNumber\": 12245678,\n            \"prescriptionType\": \"TYPE_1\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"description\": \"Test Description 4\",\n        \"prescription\": {\n            \"id\": 3,\n            \"name\": \"Test Name-3\",\n            \"serialNumber\": 10245678,\n            \"prescriptionType\": \"TYPE_2\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "rawmaterials/update?id=5",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 4,\r\n        \"description\": \"Test Description 4.1\",\r\n        \"prescription\": {\r\n            \"id\": 3,\r\n            \"name\": \"Test Name-3\",\r\n            \"serialNumber\": 10245678,\r\n            \"prescriptionType\": \"TYPE_2\"\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rawmaterials/update?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rawmaterials",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rawmaterials/update?id=5",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 4,\r\n        \"description\": \"Test Description 4.1\",\r\n        \"prescription\": {\r\n            \"id\": 3,\r\n            \"name\": \"Test Name-3\",\r\n            \"serialNumber\": 10245678,\r\n            \"prescriptionType\": \"TYPE_2\"\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/rawmaterials/update?id=4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"rawmaterials",
+										"update"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:48:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"description\": \"Test Description 4.1\",\n    \"prescription\": {\n        \"id\": 3,\n        \"name\": \"Test Name-3\",\n        \"serialNumber\": 10245678,\n        \"prescriptionType\": \"TYPE_2\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "rawmaterials/delete?id=5",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/rawmaterials/delete?id=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rawmaterials",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rawmaterials/delete?id=5",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/rawmaterials/delete?id=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"rawmaterials",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:49:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "rawmaterials/prescriptionMaterials?id=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/rawmaterials/prescriptionMaterials?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rawmaterials",
+								"prescriptionMaterials"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rawmaterials/prescriptionMaterials?id=1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/rawmaterials/prescriptionMaterials?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"rawmaterials",
+										"prescriptionMaterials"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:49:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Test Description 1\",\n        \"prescription\": {\n            \"id\": 1,\n            \"name\": \"Test Name\",\n            \"serialNumber\": 12345678,\n            \"prescriptionType\": \"TYPE_1\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"description\": \"Test Description 2\",\n        \"prescription\": {\n            \"id\": 1,\n            \"name\": \"Test Name\",\n            \"serialNumber\": 12345678,\n            \"prescriptionType\": \"TYPE_1\"\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Prescription",
+			"item": [
+				{
+					"name": "prescription/save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test Name\",\r\n    \"serialNumber\":12345678,\r\n    \"prescriptionType\":\"TYPE_1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/prescription/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prescription",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "prescription/save",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Test Name-4\",\r\n    \"serialNumber\":10245678,\r\n    \"prescriptionType\":\"TYPE_2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/prescription/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"prescription",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:44:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"name\": \"Test Name-4\",\n    \"serialNumber\": 10245678,\n    \"prescriptionType\": \"TYPE_2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "prescription/save Wrong PrescriptionType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test Name 6\",\r\n    \"serialNumber\":16345679,\r\n    \"prescriptionType\":\"TYPE_3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/prescription/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prescription",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "prescription/save Wrong PrescriptionType",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Test Name 6\",\r\n    \"serialNumber\":16345679,\r\n    \"prescriptionType\":\"TYPE_3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/prescription/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"prescription",
+										"save"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:45:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "prescription/getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prescription/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prescription",
+								"getAll"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "prescription/getAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/prescription/getAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"prescription",
+										"getAll"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:45:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Test Name\",\n        \"serialNumber\": 12345678,\n        \"prescriptionType\": \"TYPE_1\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Test Name-2\",\n        \"serialNumber\": 12245678,\n        \"prescriptionType\": \"TYPE_1\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Test Name-3\",\n        \"serialNumber\": 10245678,\n        \"prescriptionType\": \"TYPE_2\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Test Name-4\",\n        \"serialNumber\": 10245678,\n        \"prescriptionType\": \"TYPE_2\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Test Name-5\",\n        \"serialNumber\": 10145678,\n        \"prescriptionType\": \"TYPE_2\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "prescription/update?id=4",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"Test Name 4\",\r\n    \"serialNumber\": 16345679,\r\n    \"prescriptionType\": \"TYPE_1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/prescription/update?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prescription",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "prescription/update?id=4",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"Test Name 4\",\r\n    \"serialNumber\": 16345679,\r\n    \"prescriptionType\": \"TYPE_1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/prescription/update?id=4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"prescription",
+										"update"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:46:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"name\": \"Test Name 4\",\n    \"serialNumber\": 16345679,\n    \"prescriptionType\": \"TYPE_1\"\n}"
+						}
+					]
+				},
+				{
+					"name": "prescription/getById?id=2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prescription/getById?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prescription",
+								"getById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "prescription/getById?id=2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/prescription/getById?id=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"prescription",
+										"getById"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:46:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Test Name-2\",\n    \"serialNumber\": 12245678,\n    \"prescriptionType\": \"TYPE_1\"\n}"
+						}
+					]
+				},
+				{
+					"name": "prescription/delete?id=6",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prescription/delete?id=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prescription",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "prescription/delete?id=6",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/prescription/delete?id=6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"prescription",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Mar 2023 21:46:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
