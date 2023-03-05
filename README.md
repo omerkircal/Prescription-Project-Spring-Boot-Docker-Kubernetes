@@ -3,11 +3,12 @@
 ------------
 
 This project is a recipe simulation. In addition to CRUD processes, this project includes one to many relationship between prescription and raw materials.
-MySQL is used as database. In addition, an image of the project was created with Docker and deployed with Kubernates. Besides, you can check Postman documentation for back-end service.
+MySQL is used as database. The service layers of this project have been tested with the Unit Test method. In addition, an image of the project was created with Docker and deployed with Kubernates. Besides, you can check Postman documentation for back-end service.
 
 ### DOCS
 - [Languages, Technologies and Environments Used in this Project](#languages-technologies-and-environments-used-in-this-project)
 - [Back-End Service](#back-end-service)
+- [Test Process](#test-process)
 - [Import Postman Documentation](#import-postman-documentation)
 - [Create Docker Image](#create-docker-image)
 - [Deploy to Kubernetes](#deploy-to-kubernetes)
@@ -40,6 +41,19 @@ In addition, the interface approach was also used in the project. Our service cl
 ```java
 @Service
 public class PrescriptionServiceImpl implements PrescriptionService
+```
+# Test Process
+
+The service layers of this project have been tested with the Unit Test method. JUnit5 and Mockito libraries is used during testing. Below you can see a test method of PrescriptionService:
+
+```java
+    @Test
+    void getByIdForException(){
+        when(prescriptionRepository.findById(2L)).thenReturn(Optional.of(sample1));
+
+        assertThrows(RuntimeException.class,()-> prescriptionService.getById(sample1.getId()));
+
+    }
 ```
 
 # Import Postman Documentation
