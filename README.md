@@ -2,7 +2,7 @@
 
 ------------
 
-This project is a recipe simulation. In addition to CRUD processes, this project includes one to many relationship between prescription and raw materials.
+This project is a prescription simulation. In addition to CRUD processes, this project includes one to many relationship between prescription and raw materials.
 MySQL is used as database. The service layers of this project have been tested with the Unit Test method. In addition, an image of the project was created with Docker and deployed with Kubernates. Besides, you can check Postman documentation for back-end service.
 
 ### DOCS
