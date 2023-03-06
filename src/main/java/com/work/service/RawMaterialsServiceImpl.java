@@ -1,6 +1,9 @@
 package com.work.service;
 
+import com.work.entity.Prescription;
 import com.work.entity.RawMaterials;
+import com.work.exception.PrescriptionNotFoundException;
+import com.work.exception.RawMaterialsNotFoundException;
 import com.work.repository.RawMaterialsRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +25,9 @@ public class RawMaterialsServiceImpl implements RawMaterialsService{
 
     @Override
     public RawMaterials update(Long id, RawMaterials rawMaterials) {
-        RawMaterials existingRawMaterials=rawMaterialsRepository.findById(id).get();
+        RawMaterials existingRawMaterials=rawMaterialsRepository.findById(id)
+                .orElseThrow(() -> new RawMaterialsNotFoundException("Raw material could not found by id: "+id));
+
         existingRawMaterials.setDescription(rawMaterials.getDescription());
 
         return rawMaterialsRepository.save(rawMaterials);
@@ -40,7 +45,11 @@ public class RawMaterialsServiceImpl implements RawMaterialsService{
 
 
     @Override
-    public void delete(Long id) {
-        rawMaterialsRepository.deleteById(id);
+    public void delete(Long id){
+        RawMaterials rawMaterials=rawMaterialsRepository.findById(id)
+                .orElseThrow(()->new RawMaterialsNotFoundException("Raw material could not found by id: "+id));
+
+        rawMaterialsRepository.delete(rawMaterials);
+
     }
 }

@@ -1,5 +1,7 @@
 package com.work.config;
 
+import com.work.exception.PrescriptionNotFoundException;
+import com.work.exception.RawMaterialsNotFoundException;
 import com.work.utils.REnum;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
@@ -22,7 +24,7 @@ import java.util.*;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value = {IllegalArgumentException.class, IllegalStateException.class, TransactionSystemException.class,
             ConstraintViolationException.class, DataIntegrityViolationException.class, HttpMessageConversionException.class,
-            UnexpectedRollbackException.class})
+            UnexpectedRollbackException.class, PrescriptionNotFoundException.class, RawMaterialsNotFoundException.class})
     protected ResponseEntity<Object> myFnc(Exception ex) {
         Map<REnum, Object> hm = new LinkedHashMap<>();
         if (ex instanceof IllegalArgumentException) {
@@ -59,6 +61,16 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             DataIntegrityViolationException dataIntegrityViolationException = (DataIntegrityViolationException) ex;
             hm.put(REnum.status, false);
             hm.put(REnum.error, dataIntegrityViolationException.getMessage());
+        }
+        if (ex instanceof PrescriptionNotFoundException) {
+            PrescriptionNotFoundException prescriptionNotFoundException = (PrescriptionNotFoundException) ex;
+            hm.put(REnum.status, false);
+            hm.put(REnum.error, prescriptionNotFoundException.getMessage());
+        }
+        if (ex instanceof RawMaterialsNotFoundException) {
+            RawMaterialsNotFoundException rawMaterialsNotFoundException = (RawMaterialsNotFoundException) ex;
+            hm.put(REnum.status, false);
+            hm.put(REnum.error, rawMaterialsNotFoundException.getMessage());
         }
         return new ResponseEntity<>(hm, HttpStatus.BAD_REQUEST);
     }

@@ -1,10 +1,12 @@
 package com.work.service;
 
 import com.work.entity.Prescription;
+import com.work.exception.PrescriptionNotFoundException;
 import com.work.repository.PrescriptionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PrescriptionServiceImpl implements PrescriptionService{
@@ -21,12 +23,14 @@ public class PrescriptionServiceImpl implements PrescriptionService{
 
     @Override
     public Prescription update(Long id, Prescription prescription){
-        Prescription existingPrescription=prescriptionRepository.findById(id).get();
-        existingPrescription.setName(prescription.getName());
-        existingPrescription.setSerialNumber(prescription.getSerialNumber());
-        existingPrescription.setPrescriptionType(prescription.getPrescriptionType());
+        Prescription existingPrescription=prescriptionRepository.findById(id)
+                .orElseThrow(() -> new PrescriptionNotFoundException("Prescription could not found by id: "+id));
 
-        return prescriptionRepository.save(prescription);
+            existingPrescription.setName(prescription.getName());
+            existingPrescription.setSerialNumber(prescription.getSerialNumber());
+            existingPrescription.setPrescriptionType(prescription.getPrescriptionType());
+
+            return prescriptionRepository.save(prescription);
     }
 
     @Override
@@ -37,13 +41,16 @@ public class PrescriptionServiceImpl implements PrescriptionService{
     @Override
     public Prescription getById(Long id){
         return prescriptionRepository.findById(id)
-                .orElseThrow(()->new RuntimeException("Prescription could not found by id: "+id));
+                .orElseThrow(()->new PrescriptionNotFoundException("Prescription could not found by id: "+id));
     }
 
     @Override
     public void delete(Long id){
-        Prescription prescription=prescriptionRepository.findById(id).get();
-        prescriptionRepository.delete(prescription);
+        Prescription prescription=prescriptionRepository.findById(id)
+                .orElseThrow(()->new PrescriptionNotFoundException("Prescription could not found by id: "+id));
+
+            prescriptionRepository.delete(prescription);
+
     }
 
 
