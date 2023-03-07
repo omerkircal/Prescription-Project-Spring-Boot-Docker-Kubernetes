@@ -1,8 +1,10 @@
 package com.work.entity;
 
+import com.work.dto.PrescriptionDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -13,7 +15,8 @@ import javax.validation.constraints.*;
 @Table(name = "prescription")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Prescription {
+@SuperBuilder
+public class Prescription extends PrescriptionDto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

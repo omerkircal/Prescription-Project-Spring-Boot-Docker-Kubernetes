@@ -1,5 +1,7 @@
 package com.work.controller;
 
+import com.work.dto.PrescriptionRequest;
+import com.work.dto.PrescriptionDto;
 import com.work.entity.Prescription;
 import com.work.service.PrescriptionServiceImpl;
 import org.springframework.web.bind.annotation.*;
@@ -17,22 +19,22 @@ public class PrescriptionController {
     }
 
     @PostMapping("/save")
-    public Prescription save(@RequestBody @Valid Prescription prescription){
-        return prescriptionService.save(prescription);
+    public PrescriptionDto save(@RequestBody @Valid PrescriptionRequest prescriptionRequest){
+        return prescriptionService.save(prescriptionRequest);
     }
 
     @PutMapping("/update")
-    public Prescription update(@RequestParam Long id, @RequestBody @Valid Prescription prescription){
-        return prescriptionService.update(id,prescription);
+    public PrescriptionDto update(@RequestParam Long id, @RequestBody @Valid PrescriptionRequest prescriptionRequest){
+        return prescriptionService.update(id, prescriptionRequest);
     }
 
     @GetMapping("/getAll")
-    public List<Prescription> allPrescription(){
+    public List<PrescriptionDto> allPrescription(){
         return prescriptionService.allPrescription();
     }
 
     @GetMapping("/getById")
-    public Prescription getById(@RequestParam Long id){
+    public PrescriptionDto getById(@RequestParam Long id){
         return prescriptionService.getById(id);
     }
 

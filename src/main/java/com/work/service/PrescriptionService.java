@@ -1,18 +1,20 @@
 package com.work.service;
 
+import com.work.dto.PrescriptionRequest;
+import com.work.dto.PrescriptionDto;
 import com.work.entity.Prescription;
 
 import java.util.List;
 
 public interface PrescriptionService {
 
-    Prescription save(Prescription prescription);
+    PrescriptionDto save(PrescriptionRequest prescriptionRequest);
 
-    Prescription update(Long id, Prescription prescription);
+    PrescriptionDto update(Long id, PrescriptionRequest prescriptionRequest);
 
-    List<Prescription> allPrescription();
+    List<PrescriptionDto> allPrescription();
 
-    Prescription getById(Long id);
+    PrescriptionDto getById(Long id);
 
     void delete(Long id);
 }

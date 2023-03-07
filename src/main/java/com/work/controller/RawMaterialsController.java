@@ -1,9 +1,12 @@
 package com.work.controller;
 
+import com.work.dto.RawMaterialsDto;
+import com.work.dto.RawMaterialsRequest;
 import com.work.entity.RawMaterials;
 import com.work.service.RawMaterialsServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -16,23 +19,23 @@ public class RawMaterialsController {
     }
 
     @PostMapping("/save")
-    public RawMaterials save(@RequestBody RawMaterials rawMaterials){
-        return rawMaterialsService.save(rawMaterials);
+    public RawMaterialsDto save(@RequestBody @Valid RawMaterialsRequest rawMaterialsRequest){
+        return rawMaterialsService.save(rawMaterialsRequest);
     }
 
     @PutMapping("/update")
-    public RawMaterials update(@RequestParam Long id,@RequestBody RawMaterials rawMaterials){
-        return rawMaterialsService.update(id,rawMaterials);
+    public RawMaterialsDto update(@RequestParam Long id,@RequestBody @Valid RawMaterialsRequest rawMaterialsRequest){
+        return rawMaterialsService.update(id,rawMaterialsRequest);
     }
 
     @GetMapping("/getAll")
-    public List<RawMaterials> getAll(){
+    public List<RawMaterialsDto> getAll(){
         return rawMaterialsService.getAll();
     }
 
 
     @GetMapping("/prescriptionMaterials")
-    public List<RawMaterials> prescriptionMaterial(@RequestParam Long id){
+    public List<RawMaterialsDto> prescriptionMaterial(@RequestParam Long id){
         return rawMaterialsService.getPrescriptionMaterials(id);
     }
 

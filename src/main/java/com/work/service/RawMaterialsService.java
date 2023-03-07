@@ -1,17 +1,19 @@
 package com.work.service;
 
+import com.work.dto.RawMaterialsDto;
+import com.work.dto.RawMaterialsRequest;
 import com.work.entity.RawMaterials;
 
 import java.util.List;
 
 public interface RawMaterialsService {
-    RawMaterials save(RawMaterials rawMaterials);
+    RawMaterialsDto save(RawMaterialsRequest rawMaterialsRequest);
 
-    RawMaterials update(Long id,RawMaterials rawMaterials);
+    RawMaterialsDto update(Long id,RawMaterialsRequest rawMaterialsRequest);
 
-    List<RawMaterials> getAll();
+    List<RawMaterialsDto> getAll();
 
-    List<RawMaterials> getPrescriptionMaterials(Long id);
+    List<RawMaterialsDto> getPrescriptionMaterials(Long id);
 
     void delete(Long id);
 }

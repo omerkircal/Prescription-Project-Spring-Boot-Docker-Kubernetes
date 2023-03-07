@@ -1,27 +1,20 @@
-package com.work.entity;
+package com.work.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.work.entity.Prescription;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.*;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 
 @Data
-@Entity
-@Table(name = "raw_materials")
-@NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class RawMaterials {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+@NoArgsConstructor
+public class RawMaterialsRequest {
     @Length(message = "Description cannot exceed 50 characters.", max = 50)
     @NotBlank(message = "Please Enter Description")
     private String description;
