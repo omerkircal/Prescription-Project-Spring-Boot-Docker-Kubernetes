@@ -10,7 +10,7 @@
 			"name": "RawMaterials",
 			"item": [
 				{
-					"name": "rawmaterials/save",
+					"name": "save",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -24,21 +24,20 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/rawmaterials/save",
+							"raw": "http://localhost:8080/rawmaterials",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"rawmaterials",
-								"save"
+								"rawmaterials"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "rawmaterials/save",
+							"name": "rawmaterials",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -95,26 +94,25 @@
 					]
 				},
 				{
-					"name": "rawmaterials/getAll",
+					"name": "getAll",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/rawmaterials/getAll",
+							"raw": "http://localhost:8080/rawmaterials",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"rawmaterials",
-								"getAll"
+								"rawmaterials"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "rawmaterials/getAll",
+							"name": "rawmaterials",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -162,7 +160,7 @@
 					]
 				},
 				{
-					"name": "rawmaterials/update?id=5",
+					"name": "updateWithTrueId",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -176,7 +174,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/rawmaterials/update?id=4",
+							"raw": "http://localhost:8080/rawmaterials/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -184,19 +182,13 @@
 							"port": "8080",
 							"path": [
 								"rawmaterials",
-								"update"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "4"
-								}
+								"5"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "rawmaterials/update?id=5",
+							"name": "rawmaterials/5",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [],
@@ -259,12 +251,12 @@
 					]
 				},
 				{
-					"name": "rawmaterials/delete?id=5",
+					"name": "deleteWithTrueId",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/rawmaterials/delete?id=5",
+							"raw": "http://localhost:8080/rawmaterials/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -272,19 +264,13 @@
 							"port": "8080",
 							"path": [
 								"rawmaterials",
-								"delete"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "5"
-								}
+								"5"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "rawmaterials/delete?id=5",
+							"name": "rawmaterials/5",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
@@ -334,12 +320,12 @@
 					]
 				},
 				{
-					"name": "rawmaterials/prescriptionMaterials?id=1",
+					"name": "prescriptionMaterials",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/rawmaterials/prescriptionMaterials?id=1",
+							"raw": "http://localhost:8080/rawmaterials/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -347,19 +333,13 @@
 							"port": "8080",
 							"path": [
 								"rawmaterials",
-								"prescriptionMaterials"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "1"
-								}
+								"1"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "rawmaterials/prescriptionMaterials?id=1",
+							"name": "rawmaterials/1",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -413,7 +393,7 @@
 					]
 				},
 				{
-					"name": "rawmaterials/update?id=9",
+					"name": "updateWithWrongId",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -427,7 +407,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/rawmaterials/update?id=9",
+							"raw": "http://localhost:8080/rawmaterials/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -435,19 +415,13 @@
 							"port": "8080",
 							"path": [
 								"rawmaterials",
-								"update"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "9"
-								}
+								"9"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "rawmaterials/update?id=9",
+							"name": "rawmaterials/9",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [],
@@ -506,12 +480,12 @@
 					]
 				},
 				{
-					"name": "rawmaterials/delete?id=9",
+					"name": "deleteWithWrongId",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/rawmaterials/delete?id=9",
+							"raw": "http://localhost:8080/rawmaterials/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -519,19 +493,13 @@
 							"port": "8080",
 							"path": [
 								"rawmaterials",
-								"delete"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "9"
-								}
+								"9"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "rawmaterials/delete?id=9",
+							"name": "rawmaterials/9",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
@@ -586,7 +554,7 @@
 			"name": "Prescription",
 			"item": [
 				{
-					"name": "prescription/save",
+					"name": "save",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -600,21 +568,20 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/prescription/save",
+							"raw": "http://localhost:8080/prescription",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"prescription",
-								"save"
+								"prescription"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "prescription/save",
+							"name": "prescription",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -671,7 +638,7 @@
 					]
 				},
 				{
-					"name": "prescription/save Wrong PrescriptionType",
+					"name": "saveWrong PrescriptionType",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -685,21 +652,20 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/prescription/save",
+							"raw": "http://localhost:8080/prescription",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"prescription",
-								"save"
+								"prescription"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "prescription/save Wrong PrescriptionType",
+							"name": "prescription",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -748,26 +714,25 @@
 					]
 				},
 				{
-					"name": "prescription/getAll",
+					"name": "getAll",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/prescription/getAll",
+							"raw": "http://localhost:8080/prescription",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"prescription",
-								"getAll"
+								"prescription"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "prescription/getAll",
+							"name": "prescription",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -815,7 +780,7 @@
 					]
 				},
 				{
-					"name": "prescription/update?id=4",
+					"name": "updateWithTrueId",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -829,7 +794,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/prescription/update?id=4",
+							"raw": "http://localhost:8080/prescription/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -837,19 +802,13 @@
 							"port": "8080",
 							"path": [
 								"prescription",
-								"update"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "4"
-								}
+								"4"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "prescription/update?id=4",
+							"name": "prescription/4",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [],
@@ -912,12 +871,12 @@
 					]
 				},
 				{
-					"name": "prescription/getById?id=2",
+					"name": "getOneById",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/prescription/getById?id=2",
+							"raw": "http://localhost:8080/prescription/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -925,19 +884,13 @@
 							"port": "8080",
 							"path": [
 								"prescription",
-								"getById"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "2"
-								}
+								"2"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "prescription/getById?id=2",
+							"name": "prescription/2",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -991,12 +944,12 @@
 					]
 				},
 				{
-					"name": "prescription/delete?id=6",
+					"name": "deleteWithTrueId",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/prescription/delete?id=6",
+							"raw": "http://localhost:8080/prescription/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1004,19 +957,13 @@
 							"port": "8080",
 							"path": [
 								"prescription",
-								"delete"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "6"
-								}
+								"6"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "prescription/delete?id=6",
+							"name": "prescription/6",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
@@ -1066,12 +1013,12 @@
 					]
 				},
 				{
-					"name": "prescription/getById?id=9",
+					"name": "getOneByWrongId",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/prescription/getById?id=9",
+							"raw": "http://localhost:8080/prescription/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1079,19 +1026,13 @@
 							"port": "8080",
 							"path": [
 								"prescription",
-								"getById"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "9"
-								}
+								"9"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "prescription/getById?id=9",
+							"name": "prescription/9",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -1141,12 +1082,12 @@
 					]
 				},
 				{
-					"name": "prescription/delete?id=9",
+					"name": "deleteWithWrongId",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/prescription/delete?id=9",
+							"raw": "http://localhost:8080/prescription/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1154,19 +1095,13 @@
 							"port": "8080",
 							"path": [
 								"prescription",
-								"delete"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "9"
-								}
+								"9"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "prescription/delete?id=9",
+							"name": "prescription/9",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
@@ -1216,7 +1151,7 @@
 					]
 				},
 				{
-					"name": "prescription/update?id=9",
+					"name": "updateWithWrongId",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -1230,7 +1165,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/prescription/update?id=9",
+							"raw": "http://localhost:8080/prescription/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1238,19 +1173,13 @@
 							"port": "8080",
 							"path": [
 								"prescription",
-								"update"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "9"
-								}
+								"9"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "prescription/update?id=9",
+							"name": "prescription/9",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [],
