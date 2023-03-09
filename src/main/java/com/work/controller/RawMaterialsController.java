@@ -2,10 +2,8 @@ package com.work.controller;
 
 import com.work.dto.RawMaterialsDto;
 import com.work.dto.RawMaterialsRequest;
-import com.work.entity.RawMaterials;
 import com.work.service.RawMaterialsServiceImpl;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -18,29 +16,29 @@ public class RawMaterialsController {
         this.rawMaterialsService = rawMaterialsService;
     }
 
-    @PostMapping("/save")
+    @PostMapping
     public RawMaterialsDto save(@RequestBody @Valid RawMaterialsRequest rawMaterialsRequest){
         return rawMaterialsService.save(rawMaterialsRequest);
     }
 
-    @PutMapping("/update")
-    public RawMaterialsDto update(@RequestParam Long id,@RequestBody @Valid RawMaterialsRequest rawMaterialsRequest){
+    @PutMapping("/{id}")
+    public RawMaterialsDto update(@PathVariable Long id,@RequestBody @Valid RawMaterialsRequest rawMaterialsRequest){
         return rawMaterialsService.update(id,rawMaterialsRequest);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping
     public List<RawMaterialsDto> getAll(){
         return rawMaterialsService.getAll();
     }
 
 
-    @GetMapping("/prescriptionMaterials")
-    public List<RawMaterialsDto> prescriptionMaterial(@RequestParam Long id){
+    @GetMapping("/{id}")
+    public List<RawMaterialsDto> prescriptionMaterial(@PathVariable Long id){
         return rawMaterialsService.getPrescriptionMaterials(id);
     }
 
-    @DeleteMapping("/delete")
-    public void delete(@RequestParam Long id){
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
         rawMaterialsService.delete(id);
     }
 }

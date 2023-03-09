@@ -18,28 +18,28 @@ public class PrescriptionController {
         this.prescriptionService = prescriptionService;
     }
 
-    @PostMapping("/save")
+    @PostMapping
     public PrescriptionDto save(@RequestBody @Valid PrescriptionRequest prescriptionRequest){
         return prescriptionService.save(prescriptionRequest);
     }
 
-    @PutMapping("/update")
-    public PrescriptionDto update(@RequestParam Long id, @RequestBody @Valid PrescriptionRequest prescriptionRequest){
+    @PutMapping("/{id}")
+    public PrescriptionDto update(@PathVariable Long id, @RequestBody @Valid PrescriptionRequest prescriptionRequest){
         return prescriptionService.update(id, prescriptionRequest);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping
     public List<PrescriptionDto> allPrescription(){
         return prescriptionService.allPrescription();
     }
 
-    @GetMapping("/getById")
-    public PrescriptionDto getById(@RequestParam Long id){
+    @GetMapping("/{id}")
+    public PrescriptionDto getById(@PathVariable Long id){
         return prescriptionService.getById(id);
     }
 
-    @DeleteMapping("/delete")
-    public void delete(@RequestParam Long id){
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
         prescriptionService.delete(id);
     }
 }

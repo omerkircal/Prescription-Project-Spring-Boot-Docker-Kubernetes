@@ -1,6 +1,6 @@
 package com.work.dto;
 
-import com.work.entity.PrescriptionType;
+import com.work.utils.PrescriptionType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

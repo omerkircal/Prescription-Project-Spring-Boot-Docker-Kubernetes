@@ -1,14 +1,14 @@
 package com.work.dto;
 
+import com.work.entity.Prescription;
 import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Setter
 public class RawMaterialsDto {
     private Long id;
     private String description;
-    private PrescriptionDto prescription;
+    private Prescription prescription;
 }
